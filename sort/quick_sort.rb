@@ -8,11 +8,11 @@ def swap(arr, index_1, index_2)
   arr[index_2] = temp
 end
 
-def pivot_helper(arr, start_ix = 0, end_ix = arr.length - 1)
+def pivot_helper(arr, start_ix = 0, end_ix = arr.length + 1)
   pivot_number = start_ix
   current_pivot = start_ix
 
-  while start_ix <= end_ix
+  while start_ix < end_ix
     if arr[pivot_number] > arr[start_ix]
       current_pivot += 1
       swap(arr, current_pivot, start_ix)
