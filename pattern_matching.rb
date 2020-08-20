@@ -24,7 +24,7 @@ def find_permutation(str, pattern)
 			return true
 		end
 		window_start += 1
-        window_end += 1
+    window_end += 1
 	end
 	false
 end
