@@ -9,8 +9,8 @@ def swap(arr, index_1, index_2)
 end
 
 def pivot_helper(arr, start_ix = 0, end_ix = arr.length + 1)
-  pivot_number = start_ix
-  current_pivot = start_ix
+  pivot_number = start_ix 0
+  current_pivot = start_ix 3
 
   while start_ix < end_ix
     if arr[pivot_number] > arr[start_ix]
@@ -26,7 +26,7 @@ def pivot_helper(arr, start_ix = 0, end_ix = arr.length + 1)
   current_pivot
 end
 
-# p pivot_helper [0, 1, 2, 3, 4, 5, 6, 7, 8]
+# p pivot_helper [7, 1, 8, 9, 4, 5, 6, 7, 8]
 
 def  quick_sort(arr, left = 0, right = arr.length - 1)
     if left < right

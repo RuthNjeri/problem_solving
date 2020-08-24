@@ -80,7 +80,7 @@ class BinarySearchTree
     @queue.push(current.value)
   end
 
-  def dfs_inorder
+  def dfs_inorder #left, root, right
     @queue = []
     traverse_inorder(@root)
     @queue

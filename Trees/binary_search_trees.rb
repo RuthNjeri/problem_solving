@@ -62,6 +62,26 @@ class BinarySearchTree
 
     current
   end
+
+  def find_closest_value(tree, target)
+    current_node = tree.root
+    closest_value = current_node.value
+
+    while current_node
+      if ( target - current_node.value ) < ( target - closest_value )
+        closest_value = current_node.value
+      end
+
+      if target < current_node.value
+        current_node = current_node.left
+      elsif target > current_node.value
+        current_node = current_node.right
+      else
+        break
+      end
+    end
+    closest_value
+  end
 end
 
 
