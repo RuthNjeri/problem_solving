@@ -25,6 +25,7 @@ end
 # DP using Tabulation(Bottom Up)
 # Better space complexity
 
+# Space and time complexity of O(n)
 def fibonacci_table(position)
   return 1 if position == 1 || position == 2
 
@@ -36,3 +37,22 @@ def fibonacci_table(position)
 
   fib_table[position]
 end
+
+# Space complexity O(1), time complexity 0(n)
+
+def fibonacci_table_2(position)
+  return 1 if position == 1 || position == 2
+
+  prev_1 = 1
+  prev_2 = 1
+
+  (3..position).map do |index|
+    result = prev_1 + prev_2
+
+    prev_1 = prev_2
+    prev_2 = result
+  end
+
+  prev_2
+end
+
