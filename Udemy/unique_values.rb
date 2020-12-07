@@ -15,6 +15,7 @@ def count_unique_values(sorted_array)
     unique
 end
 
+binding.pry
 
 p count_unique_values([-2,-1,-1,0,1,])
 
