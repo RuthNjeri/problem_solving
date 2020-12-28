@@ -14,7 +14,7 @@ def is_subsequence(string_1, string_2)
   return false if string_1.length.zero? || string_2.length.zero?
   return false if string_1.class != String || string_2.class != String
 
-  while pointer_1 < string_1.length && pointer_2 < string_2.length
+  while pointer_2 < string_2.length
     if string_1[pointer_1] == string_2[pointer_2]
       pointer_1 += 1
     end
