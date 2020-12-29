@@ -1,4 +1,3 @@
-require 'pry'
 def max_subarray_sum(main_arr, length)
   return 0 if main_arr.length.zero?
   return 0 if length < 0
