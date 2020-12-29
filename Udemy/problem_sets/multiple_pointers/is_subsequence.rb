@@ -2,7 +2,6 @@
 # Checks whether the characters in the first string
 # Form a subsequence of characters in the second string
 
-require 'pry'
 def is_subsequence(string_1, string_2)
 
   pointer_1 = 0
@@ -26,7 +25,7 @@ def is_subsequence(string_1, string_2)
   false
 end
 
-p is_subsequence("hello", "hello world")
-p is_subsequence("sing", "sting")
-p is_subsequence("abc", "abracadabra")
-p is_subsequence("abc", "acb")
+p is_subsequence("hello", "hello world") # true
+p is_subsequence("sing", "sting") # true
+p is_subsequence("abc", "abracadabra") # true
+p is_subsequence("abc", "acb") # false
