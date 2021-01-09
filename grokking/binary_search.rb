@@ -1,3 +1,9 @@
+# Binary Search inputs are sorted.
+# returns the position of the item you are searching
+# Big O
+# log(n) worst case
+
+
 def binary_search(numbers, item)
     low = 0
     high = numbers.length - 1
@@ -12,7 +18,6 @@ def binary_search(numbers, item)
             low = mid + 1
         end
     end
-    
     return nil
 end
 
@@ -21,5 +26,3 @@ my_list = [1, 3, 5, 7, 9]
 p binary_search(my_list, 3)
 p binary_search(my_list, -1)
 
-# Big O
-# log(n) worst case
