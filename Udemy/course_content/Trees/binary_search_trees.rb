@@ -29,13 +29,13 @@ class BinarySearchTree
             current.left = new_node
             return self
           end
-            current = current.left
+          current = current.left
         elsif  value > current.value
             if current.right.nil?
               current.right = new_node
               return self
             end
-             current = current.right
+            current = current.right
         end
       end
     end
@@ -82,6 +82,28 @@ class BinarySearchTree
     end
     closest_value
   end
+
+# Algo-Expert
+#   def find_closest_value_in_bst(tree, target)
+#     return find_closest_value_in_bst_helper(tree, target, Float::INFINITY)
+#   end
+
+#   def find_closest_value_in_bst_helper(tree, target, closest)
+#     current_node = tree.root
+#     while !current_node.nil?
+#       if (target - closest).abs > (target - current_node.value).abs
+#         closest = current_node.value
+#       end
+#       if target < current_node.value
+#         current_node = current_node.left
+#       elsif target > current_node.value
+#         current_node = current_node.right
+#       else
+#         break
+#       end
+#     end
+#     closest
+#   end
 end
 
 
@@ -93,6 +115,7 @@ tree.insert(11)
 tree.insert(2)
 tree.insert(16)
 tree.insert(7)
+
 # tree.root = Node.new(10)
 # tree.root.right = Node.new(20)
 # tree.root.left = Node.new(7)
