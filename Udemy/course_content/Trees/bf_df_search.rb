@@ -93,6 +93,22 @@ class BinarySearchTree
     traverse_inorder(current.right) if current.right
     #  traverse_inorder(current.right) && current.right
   end
+
+  def branch_sum(root)
+    sums = []
+    branch_sum_helper(root, 0, sums)
+    sums
+  end
+
+  def branch_sum_helper(node, running_sum, sums)
+    return if node.nil?
+
+    new_sum = running_sum + node.value
+    sums << new_sum if node.left.nil? && node.right.nil?
+
+    branch_sum_helper(node.left,  new_sum, sums)
+    branch_sum_helper(node.right,  new_sum, sums)
+  end
 end
 
 
