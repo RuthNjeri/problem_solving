@@ -83,6 +83,19 @@ class BinarySearchTree
     closest_value
   end
 
+  def node_depths(tree)
+    node_depths_helper(tree.root, 0)
+  end
+
+  def node_depths_helper(node, depth)
+    return 0 if node.nil?
+
+    left_sum = node_depths_helper(node.left, depth + 1)
+    right_sum = node_depths_helper(node.right, depth + 1)
+
+    depth + left_sum + right_sum
+  end
+
 # Algo-Expert
 #   def find_closest_value_in_bst(tree, target)
 #     return find_closest_value_in_bst_helper(tree, target, Float::INFINITY)
@@ -109,12 +122,10 @@ end
 
 tree = BinarySearchTree.new()
 tree.insert(10)
-tree.insert(5)
-tree.insert(13)
-tree.insert(11)
+tree.insert(9)
+tree.insert(15)
 tree.insert(2)
-tree.insert(16)
-tree.insert(7)
+
 
 # tree.root = Node.new(10)
 # tree.root.right = Node.new(20)
