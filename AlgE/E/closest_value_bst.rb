@@ -5,7 +5,7 @@
 # Average: O(logn)ST
 # Worst: O(n)ST
 def find_closest_value_in_bst(tree, target)
-  return find_closest_value_in_bst_helper(tree, target, Float::INFINITY)
+  find_closest_value_in_bst_helper(tree, target, Float::INFINITY)
 end
 
 def find_closest_value_in_bst_helper(tree, target, closest)
