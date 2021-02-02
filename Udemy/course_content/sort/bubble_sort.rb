@@ -31,7 +31,7 @@ def bubble_sort(array)
         no_swap = false
       end
       inner_index += 1
-   end
+    end
     break if no_swap
 
     outer_index -= 1

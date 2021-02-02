@@ -22,7 +22,6 @@ def merge_arrays(array_1, array_2)
   while arr_2_index < array_2.length
     sorted_array << array_2[arr_2_index]
     arr_2_index += 1
-
   end
   sorted_array
 end
