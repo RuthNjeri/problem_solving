@@ -20,6 +20,7 @@ class BST
   end
 
   # search using recursion
+  # O(h)T, h = height of the tree
   def search(value)
     return 'not found' if @root.nil?
     return 'found' if @root.value == value
@@ -56,7 +57,7 @@ class BST
   # BST traversal can list all nodes in sorted order
   # in-order traversal
   # visit all left nodes, then the root, then the right nodes
-
+  # O(n) nodes in the tree
   def inorder
     @queue = []
     inorder_traversal(@root)
@@ -67,6 +68,27 @@ class BST
     inorder_traversal(node.left) if node.left
     @queue << node.value
     inorder_traversal(node.right) if node.right
+  end
+
+  # O(h)T height of the tree
+  def insertion(value)
+    insertion_recursion(value, @root)
+  end
+
+  def insertion_recursion(value, tree)
+    if value < tree.value
+      if tree.left.nil?
+        tree.left = Node.new(value)
+        return
+      end
+      insertion_recursion(value, tree.left)
+    else
+      if tree.right.nil?
+        tree.right = Node.new(value)
+        return
+      end
+      insertion_recursion(value, tree.right)
+    end
   end
 end
 
@@ -81,6 +103,7 @@ root.left.right = Node.new(2)
 bst = BST.new(root)
 bst2 = BST.new(root)
 bst3 = BST.new(root)
+bst4 = BST.new(root)
 
 # Recursion was alterring the original root node
 # Used two different objects to access the methods
@@ -88,3 +111,6 @@ bst3 = BST.new(root)
 p bst.find_minimum
 p bst2.search(2)
 p bst3.inorder
+
+p bst4.insertion(3)
+binding.pry
