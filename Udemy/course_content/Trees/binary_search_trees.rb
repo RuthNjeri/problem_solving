@@ -30,12 +30,12 @@ class BinarySearchTree
             return self
           end
           current = current.left
-        elsif  value > current.value
-            if current.right.nil?
-              current.right = new_node
-              return self
-            end
-            current = current.right
+        else
+          if current.right.nil?
+            current.right = new_node
+            return self
+          end
+          current = current.right
         end
       end
     end
