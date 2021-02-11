@@ -8,7 +8,7 @@ class Node
   end 
   
   def add_child(name)
-	@children.append(Node.new(name))
+	  @children.append(Node.new(name))
   end
 
   def depth_first_search(array) #["A", "B", "E", "F", "I", "J", "C", "D", "G", "K", "H"]
