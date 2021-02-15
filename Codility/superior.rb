@@ -23,7 +23,6 @@ def solution(ranks)
   for rank, value in ranks_list
     same_superior += value
   end
-  binding.pry
 
   same_superior
 end
