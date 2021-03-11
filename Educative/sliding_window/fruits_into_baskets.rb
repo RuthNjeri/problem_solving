@@ -18,7 +18,7 @@
 # Output: 5
 # Explanation: We can put 3 'B' in one basket and two 'C' in the other basket.
 # This can be done if we start with the second letter: ['B', 'C', 'B', 'B', 'C']
-
+require 'pry'
 # O(n)T, O(1) S
 def fruit_baskets(fruits)
   basket = {}

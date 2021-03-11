@@ -43,4 +43,5 @@ def frog_2_distance(start)
 end
 
 p solution([2, 6, 8, 5])
+p solution([1, 5, 5, 2, 6])
 p solution([2])
