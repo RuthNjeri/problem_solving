@@ -56,6 +56,7 @@ class BinarySearchTree
         current = current.left
       else
         found = true
+        break
       end
     end
     return false unless found
