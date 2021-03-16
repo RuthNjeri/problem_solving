@@ -148,11 +148,31 @@ class SinglyLinkedList
     end
     self
   end
+
+  def reverse_
+    node = @head
+    @head = @tail
+    @tail = @head
+    prev_node = nil
+    next_node = nil
+
+    while !node.nil?
+      binding.pry
+      next_node = node.next_node
+      node.next_node = prev_node
+      prev_node = node
+      node = next_node
+    end
+    self
+  end
 end
 
 list = SinglyLinkedList.new
-list.push('Heloo')
-list.push('Goodbye')
-list.push('!')
+list.push(2)
+list.push(3)
+list.push(4)
 
-binding.pry
+# p list
+p list.reverse_
+
+# binding.pry

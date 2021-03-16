@@ -2,7 +2,7 @@ require 'pry'
 
 # Recursion solution O(2^n)
 def fibonacci_recur(position)
-  return 1 if position == 1 || position == 2
+  return 1 if position <= 2
 
   fibonacci(position - 1) + fibonacci(position - 2)
 end
