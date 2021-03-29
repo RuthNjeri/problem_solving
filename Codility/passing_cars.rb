@@ -9,7 +9,6 @@ def solution(a)
     next_car = car + 1
     for passing_car in (next_car..cars)
       if car < passing_car
-        binding.pry
         counter += 1
       end
       puts counter
