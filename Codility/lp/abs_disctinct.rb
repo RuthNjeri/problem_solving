@@ -35,6 +35,9 @@ def solution(a)
   abs_distinct
 end
 
-p solution([-3, -3, -3, 3, 3, 3]) # edge case => 1
-p solution([5, 5, 5, 5, 5, 5, 5]) # edge case => 1
-p solution([9]) # edge case => 1
+# 1, 2, 3, 4, 5
+
+p solution([-5,-3,-1 ,0 , 3, 6])
+# p solution([-3, -3, -3, 3, 3, 3]) # edge case => 1
+# p solution([|5, 5, 5, 5, 5, 5, 5]) # edge case => 1
+# p solution([9]) # edge case => 1
