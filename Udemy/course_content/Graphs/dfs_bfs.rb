@@ -5,8 +5,8 @@ class Node
   def initialize(name)
     @children = []
 	  @name = name
-  end 
-  
+  end
+
   def add_child(name)
 	  @children.append(Node.new(name))
   end
@@ -51,4 +51,33 @@ graph.children[2].add_child("H")
 graph.children[2].children[0].add_child("K")
 
 binding.pry
+
+
+# A --- B
+# |     /
+# |   /
+#   C
+
+# dfs... one branch till the end..once done go to the neighbor
+
+# adj_list = {"A" : ["B", "C"], "B" : ["A", "C"], "C" : ["B", "A"]}
+# Visited ["A", "B", "C"]
+# ["A" for children in "A" Visit child then traverse]
+  # ["B" traverse children in B ]
+    # ["A" has been visited]
+    # ["C" visit children]
+      # [""]
+  # ["C"]
+
+# bfs visited [C]
+# dequeue "A"
+# Traverse neigh
+# [A, B]
+
+# dequeue "B"
+# Traverse neigh
+# [A, B]
+
+
+
 
