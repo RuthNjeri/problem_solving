@@ -34,12 +34,50 @@ def solution(a, b)
 end
 
 
+def solution(a, b)
+  # write your code in Ruby 2.2
+  adj_list = {}
+  visited = {}
+  visited_nodes = 0
+  start_node = 1
+  stack = [start_node]
+
+
+  for item in (0...a.length)
+    node = a[item]
+    if adj_list[node].nil?
+      adj_list[node] = [b[item]]
+    else
+      return false
+    end
+  end
+
+
+  while !stack.empty?
+    current_node = stack.pop
+    if visited[current_node]
+      break
+    end
+    visited[current_node] = true
+    visited_nodes += 1
+    if !adj_list[current_node].nil?
+      for node in adj_list[current_node]
+        stack << node
+      end
+    end
+  end
+  current_node == start_node && visited_nodes == a.length ? true : false
+end
+
+
 # Tests
+# Failing at small_corner_cases
 # p solution([1, 2, 1], [3, 2, 2]) #false
 p solution([1, 2, 2, 3, 3] ,[2, 3, 3, 4, 5]) #false
-p solution([1, 2, 3, 4], [2, 1, 4, 4]) #false
-p solution([1, 2, 1], [2, 3, 3]) #false
-p solution([3, 1, 2], [2, 3, 1]) #true
+# Check the above if a node is not present in A then it is not a cycle
+# p solution([1, 2, 3, 4], [2, 1, 4, 4]) #false
+# p solution([1, 2, 1], [2, 3, 3]) #false
+# p solution([3, 1, 2], [2, 3, 1]) #true
 # p solution([3, 1, 2], [2, 3, 1]) #true
 # p solution([1, 2, 3, 4], [2, 1, 4, 4]) #false
 # p solution([1, 2, 3, 4], [2, 1, 4, 3]) #false
