@@ -27,6 +27,8 @@ def binary_search(arr, target)
 end
 
 def binary_search_helper(arr, target, low, high)
+  return -1 if high < low
+
   mid = (low + high)/2
   if target < arr[mid]
     high = mid - 1
@@ -39,4 +41,4 @@ def binary_search_helper(arr, target, low, high)
   end
 end
 
-p binary_search([0, 1, 21, 33, 45, 45, 61, 71, 72, 73], 33)
+p binary_search([0, 1, 21, 45, 45, 61, 71, 72, 73], 33)

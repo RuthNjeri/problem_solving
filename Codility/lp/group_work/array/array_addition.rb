@@ -10,6 +10,7 @@
 # Input: [3, 5, -1, 8, 12]
 # Output: True
 
+# Uses dynamic programming
 def array_addition(arr)
   # Loop through the array to get the largest item
   largest_num = 0
@@ -20,7 +21,6 @@ def array_addition(arr)
     end
     sum += num
   end
-
   # Find the total minus the largest sum
   sum -= largest_num
   # If the result of the total so far minus the largest sum exists return true
@@ -34,7 +34,10 @@ def array_addition(arr)
   false
 end
 
-p array_addition([4, 6, 23, 10, 1, 3]) # true
-p array_addition([5, 7, 16, 1, 2]) # false
-p array_addition([3, 5, -1, 8, 12]) # true
-p array_addition([1, 2, 3, 4]) # true
+
+
+# p array_addition([4, 6, 23, 10, 1, 3]) # true 47 - 23 = 24, 24 - 23, 1
+# p array_addition([5, 7, 16, 1, 2]) # false
+p array_addition([3, 9, 5, -1, 8, 12]) # true, 12, 24 - 12 12 [-1, 3, 5, 8, 9], 12]... 12 [-1, 2, 7, 15, 24] # go back to the original array?
+# # total = 15 , largest = 12, 3
+# p array_addition([1, 2, 3, 4]) # true
